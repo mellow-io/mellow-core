@@ -1,0 +1,20 @@
+script:
+  - mkdir dist
+  - cp bin/darwin/core dist/core-darwin
+  - cp bin/linux/core dist/core-linux
+  - cp bin/win32/core.exe dist/core-win32.exe
+
+deploy:
+  provider: releases
+  api_key:
+    secure: mZMmavlWHvOyBfHToD8GJwfjqzb1qbWE3RsnZGDzkkJe3Nw4Z5Z/b3KZCCgkHrdsaozaghg4rb9eU1zgiuH+2aoee3OxpTg8uE43sFEDxi9bqndbrg+L81H78zbbaIYcqJDZwbwHjMGb8uQkV3Nheeoya9fT0lMN8zGW+3n40fsfOIKjAR5pql7Fj+LuwSee6n9IKVt1qRczhYpf9WTtF+Vfy8C1SbRDtPlSlbh981oXm6SoLO4Waz2YLXSwkPqeMofa2gtRWuzWadTBh20+p38WRIIi1mc9sDYg/mraMGc8qx/NT3yMr3lOm1nesNy5NS1nvEcN0yYhcEWlVvU0l5Vwbbl8GC1NzIXFt1xE5f96XI6j9q1wQlCaNqSeFLS7VCWvgL5LginLrYsYskrk8zoNsd+itT62akQ+Pl6Q3bBI8hchzGt/U3zk874GUnYUUA9hCDywC6EoJA3igN2SDVOLAM/CCnt6PHwAtkxdd5KOzoR8ebSkV4jmJ/l6qBSj2nqbR0YqUGLBK0kpqwCGvucw1aYiRMg0z/0xROV7kezEcNzA0zsKwVAQ15p8GB953a+KhsFBASxo8B/6sQbV3E8ERJpJtrIcpqThkPHb99qWQ34vWl/NQCrzOetXw0eGKZJim1QF3R/qeJ9Adl8g9l/JyMlkTpO/2kOYf1Zq/9E=
+  file_glob: true
+  file:
+    - "dist/*"
+  on:
+    repo: mellow-io/mellow-core
+  skip_cleanup: true
+
+env:
+  global:
+    secure: j+OerVem/X1gsEaGS19IHTg8rOeyY5BbxjkLd1mU0oK3PMneCvze/pY/IGlUiw0LqnswhdLsQXMSHwrq+Cc3dBVY8xA/Jj8IUx9AVwGsYxOkgNBezRukQPNQyujlBFLIkABcjsQ591r7VCB6+rlG+aJGB2TZJG3I35PtDCStmi7zYlUWeC3sUnu+xhU4T3ir2KRhW6l9THpJRqw+yafdkMdOmhWaqkZav7PJgwaxy+xK8RcCJlE+74Mabnv3igAg1rSFP8icjVz9CdPHEjtarp2sJuldjEyBp4Sn0zR4rTUQYpJUoHcUK6y5VyDHPmmdLKJPOIkRHEvI6XOD/V3NgrEa/jRz0Yg1G1Tc03zjTDwbbLKnFqepjNxhZTRAVS9oo77W4YXytsWvLNF/DeNRcLCL68VIDW8c0oeJNXmauuLOyMggZ/sjNy3mitma/GsNE0xGy3TCJkCM0NG97FDGkM8t0fIs1bnoDCYBSEHYrq5gOYmpbQTK6zVjPhSfc7ul0UGMSEW55YQ5ObtTTQ33T0aSb9nd8DbDr7ud3U5qmZpxpiObaA/hKklEapjAeWUkOUteDbtTb3cs3SnhyeTu0k2NVp6raro31rAYip/UMwaU/mwthd22kkacVzoOTUzAixiS5kgYGCFX0lenuuWhPAu8HiRVf0uncz51lzGs4WY=
