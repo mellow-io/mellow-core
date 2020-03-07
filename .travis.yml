@@ -1,8 +1,4 @@
-script:
-  - mkdir dist
-  - cp bin/darwin/core dist/core-darwin
-  - cp bin/linux/core dist/core-linux
-  - cp bin/win32/core.exe dist/core-win32.exe
+language: minimal
 
 deploy:
   provider: releases
@@ -10,7 +6,9 @@ deploy:
     secure: mZMmavlWHvOyBfHToD8GJwfjqzb1qbWE3RsnZGDzkkJe3Nw4Z5Z/b3KZCCgkHrdsaozaghg4rb9eU1zgiuH+2aoee3OxpTg8uE43sFEDxi9bqndbrg+L81H78zbbaIYcqJDZwbwHjMGb8uQkV3Nheeoya9fT0lMN8zGW+3n40fsfOIKjAR5pql7Fj+LuwSee6n9IKVt1qRczhYpf9WTtF+Vfy8C1SbRDtPlSlbh981oXm6SoLO4Waz2YLXSwkPqeMofa2gtRWuzWadTBh20+p38WRIIi1mc9sDYg/mraMGc8qx/NT3yMr3lOm1nesNy5NS1nvEcN0yYhcEWlVvU0l5Vwbbl8GC1NzIXFt1xE5f96XI6j9q1wQlCaNqSeFLS7VCWvgL5LginLrYsYskrk8zoNsd+itT62akQ+Pl6Q3bBI8hchzGt/U3zk874GUnYUUA9hCDywC6EoJA3igN2SDVOLAM/CCnt6PHwAtkxdd5KOzoR8ebSkV4jmJ/l6qBSj2nqbR0YqUGLBK0kpqwCGvucw1aYiRMg0z/0xROV7kezEcNzA0zsKwVAQ15p8GB953a+KhsFBASxo8B/6sQbV3E8ERJpJtrIcpqThkPHb99qWQ34vWl/NQCrzOetXw0eGKZJim1QF3R/qeJ9Adl8g9l/JyMlkTpO/2kOYf1Zq/9E=
   file_glob: true
   file:
-    - "dist/*"
+    - "bin/darwin/*"
+    - "bin/linux/*"
+    - "bin/win32/*"
   on:
     repo: mellow-io/mellow-core
   skip_cleanup: true
