@@ -11,6 +11,7 @@ deploy:
     - "bin/win32/*"
   on:
     repo: mellow-io/mellow-core
+    tags: true
   skip_cleanup: true
 
 env:
